@@ -15,9 +15,10 @@ import { List } from '@ckeditor/ckeditor5-list';
 import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { SpecialCharacters, SpecialCharactersEssentials } from '@ckeditor/ckeditor5-special-characters';
 import { CKFinder } from '@ckeditor/ckeditor5-ckfinder';
-import { Alignment } from '@ckeditor/ckeditor5-alignment'; // <--- ADDED
+import { Alignment } from '@ckeditor/ckeditor5-alignment';
 import { Font } from '@ckeditor/ckeditor5-font';
-// Plugins to include in the build.
+
+// Plugins to include in the builtinPlugins.
 ClassicEditor.builtinPlugins = [
     Essentials,
     UploadAdapter,
@@ -77,7 +78,6 @@ ClassicEditor.defaultConfig = {
         // Upload the images to the server using the CKFinder QuickUpload command.
         uploadUrl: 'https://example.com/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json'
     },
-    // This value must be kept in sync with the language defined in webpack.config.js.
     language: 'en'
 };
 
@@ -89,6 +89,4 @@ ClassicEditor.defaultConfig = {
 
 export class AppComponent {
     public Editor = ClassicEditor;
-
-
 }
