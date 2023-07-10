@@ -66,7 +66,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular.io-example:build:production"
+              "browserTarget": "angular.io-example:build:production",
+              "outputHashing": false
             }
           }
         },
@@ -108,5 +109,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
