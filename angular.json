@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular.io-example": {
+    "demo-ckeditor5": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -62,19 +62,22 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "angular.io-example:build"
+            "browserTarget": "demo-ckeditor5:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular.io-example:build:production",
-              "outputHashing": false
+              "browserTarget": "demo-ckeditor5:build:production"
+            },
+            "development": {
+              "browserTarget": "demo-ckeditor5:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular.io-example:build"
+            "browserTarget": "demo-ckeditor5:build"
           }
         },
         "test": {
@@ -99,11 +102,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular.io-example:serve"
+            "devServerTarget": "demo-ckeditor5:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular.io-example:serve:production"
+              "devServerTarget": "demo-ckeditor5:serve:production"
             }
           }
         }
