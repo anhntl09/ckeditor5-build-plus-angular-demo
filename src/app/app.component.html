@@ -1,2 +1,10 @@
-<h2>Simple usage</h2>
-<ckeditor [editor]="Editor" [config]="config"></ckeditor>
+<h1>
+    Test PDM CkEditor 4
+</h1>
+<form name="mainMatForm" [formGroup]="mainMatForm" (ngSubmit)="onMainMatFormNgSubmit($event)">
+    <ckeditor name="ckeditor_text" formControlName="ckeditor_text"
+        editorUrl="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js" [config]="ckEditorConfig"
+        (ready)="onCkEditorReady($event)"></ckeditor>
+</form>
+<div>{{ckeditorTextFormElement?.value}}</div>
+<div>{{availablePlugins}}</div>
