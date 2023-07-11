@@ -1,6 +1,7 @@
 import { Component, VERSION } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { CKEditor4, } from 'ckeditor4-angular/ckeditor';
+import { CKEditorModule } from 'ckeditor4-angular';
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
@@ -21,8 +22,16 @@ export class AppComponent {
             ['Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe'],
             ['Styles', 'Format', 'Font', 'FontSize'],
             ['TextColor', 'BGColor'],
-            ['Maximize', 'ShowBlocks']
-        ]
+            ['Maximize', 'ShowBlocks',]
+        ],
+        plugins: "exportpdf",
+        // exportPdf_options: {
+        //     header_html: '<div class="styled">Header content</div>',
+        //     footer_html: '<div class="styled-counter"><span class="pageNumber"></span></div>',
+        //     header_and_footer_css: '.styled { font-weight: bold; padding: 10px; } .styled-counter { font-size: 1em; color: hsl(0, 0%, 60%); }',
+        //     margin_top: '2cm',
+        //     margin_bottom: '2cm'
+        // }
     };
 
     constructor(private formBuilder: FormBuilder) { }
@@ -51,7 +60,23 @@ export class AppComponent {
 
         return result;
     }
+    public onNamespaceLoaded(editor: any) {
+        // Add external `placeholder` plugin which will be available for each
+        // editor instance on the page.
+        // console.log("??/");
 
+        // editor.plugins.addExternal('exportpdf', './node_modules/ckeditor4-plugin-exportpdf/', 'plugin.js');
+        // console.log('editor', editor);
+        //     editor.replace('ckeditor_text', {
+        //         extraPlugins: 'pbckcode',
+        //         toolbar: [
+        //           ['clipboard', 'undo', '-', 'Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'],
+        //           ['TextColor', 'Bold', 'Italic'],
+        //           ['Format', 'Font', 'FontSize'],
+        //           ['pbckcode']
+        //         ]
+        //       });
+    }
 
 
     onCkEditorReady(editor: any): boolean {

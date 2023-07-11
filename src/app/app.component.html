@@ -3,7 +3,7 @@
 </h1>
 <form name="mainMatForm" [formGroup]="mainMatForm" (ngSubmit)="onMainMatFormNgSubmit($event)">
     <ckeditor name="ckeditor_text" formControlName="ckeditor_text"
-        editorUrl="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js" [config]="ckEditorConfig"
+        editorUrl="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js" (namespaceLoaded)="onNamespaceLoaded($event)"
         (ready)="onCkEditorReady($event)"></ckeditor>
 </form>
 <div>{{ckeditorTextFormElement?.value}}</div>

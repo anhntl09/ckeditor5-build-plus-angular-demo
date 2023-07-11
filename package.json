@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^16.1.0-rc.0",
     "@angular/router": "^16.1.0-rc.0",
     "ckeditor4-angular": "^4.0.1",
+    "ckeditor4-plugin-exportpdf": "^1.0.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
