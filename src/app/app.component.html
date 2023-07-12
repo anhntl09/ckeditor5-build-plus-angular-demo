@@ -1,2 +1,10 @@
 <h2>Simple usage</h2>
-<ckeditor [editor]="Editor"></ckeditor>
+<div class="select-formData">
+    <select (change)="onChangeSetectOption($event)">
+        <option value="undefined" disabled selected hidden>Chọn mẫu đơn</option>
+        <option *ngFor="let c of options;let i = index" [value]="i">{{c.name}}</option>
+    </select>
+</div>
+<ckeditor [editor]="Editor" (change)="onChange($event)" [data]="data"></ckeditor>
+<h4>Data:</h4>
+<div>{{ data }}</div>
